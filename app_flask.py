@@ -1,14 +1,18 @@
-from flask import Flask,render_template, request,json,url_for,flash,redirect,jsonify
+from flask import Flask, request,json,jsonify
 from lipi_edits import generatedRes
+from flask_restful import reqparse, abort, Api, Resource
+
 
 #sentiment_value
 #persona
 
 app = Flask(__name__)
-app.secret_key = 'random string'
+api = Api(app)
+
 
 
 @app.route("/get_response",methods=['GET','POST'])
+
 def getResponse():
     print("oolala")
     print(request.get_json())
@@ -24,6 +28,14 @@ def getResponse():
     
     res=generatedRes(persona,sentiment_value)
     return res
+
+
+task={
+      'name':"lipi"}
+
+@app.route("/test",methods=['GET'])
+def test():
+    return jsonify(task)
 
 if __name__=='__main__':
     app.run(debug=True)
