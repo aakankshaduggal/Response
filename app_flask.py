@@ -9,10 +9,11 @@ from flask_restful import reqparse, abort, Api, Resource
 app = Flask(__name__)
 api = Api(app)
 
-
+parser = reqparse.RequestParser()
+parser.add_argument('task')
 
 @app.route("/get_response",methods=['GET','POST'])
-
+#class getresponse(Resource)
 def getResponse():
     print("oolala")
     print(request.get_json())
@@ -37,5 +38,8 @@ task={
 def test():
     return jsonify(task)
 
+#api.add_resource(getresponse, '/get_response')
+#api.add_resource(Todo, '/todos/<todo_id>')
+
 if __name__=='__main__':
-    app.run(debug=True)
+    app.run(debug=True,host='0.0.0.0',port=8080 )
