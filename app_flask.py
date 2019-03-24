@@ -34,7 +34,7 @@ def getResponse():
 task={
       'name':"lipi"}
 
-@app.route("/test",methods=['GET'])
+@app.route("/",methods=['GET'])
 def test():
     return jsonify(task)
 
