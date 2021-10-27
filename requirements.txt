@@ -11,7 +11,7 @@ attrs==17.4.0
 Babel==2.5.3
 backports.shutil-get-terminal-size==1.0.0
 bcrypt==3.1.4
-Flask==0.12.2
+Flask==1.0
 Flask-Bcrypt==0.7.1
 Flask-Cors==3.0.9
 Flask-HTTPAuth==3.2.4
